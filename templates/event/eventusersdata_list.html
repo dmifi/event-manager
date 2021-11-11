@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+</head>
+<body>
+<table border="1" rules="all" align="center" cellpadding="5" cellspacing="5">
+    <caption><b>Таблица последних 10-ти действий</b> </caption>
+    <tr>
+        <th>ID</th>
+        <th>Дата/Время</th>
+        <th>Вес</th>
+        <th>Возраст</th>
+        <th>Итого</th>
+        <th>Текст А</th>
+        <th>Текст В</th>
+        <th>Описание</th>
+        <th>Состояние</th>
+    </tr>
+    {% for data in event_user_data %}
+    <tr>
+        <td>{{data.pk}}</td>
+        <td>{{data.date_time}}</td>
+        <td>{{data.weight_user}}</td>
+        <td>{{data.age_user}}</td>
+        <td>{{data.total_user}}</td>
+        <td>{{data.text_a}}</td>
+        <td>{{data.text_b}}</td>
+        <td>{{data.description}}</td>
+        <td>{{data.status}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

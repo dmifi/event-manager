@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <p>Дата: {% now "d.m.Y H:i" %}</p>
+    <p>Масса: {{ form.weight_user }}</p>
+    <p>Возраст: {{ form.age_user }}</p>
+    <p>Тотал: <input type="number" name="total_user" min="0" disabled id="id_total_user" value=""></p>
+    <p>Текст A: {{ form.text_a }}</p>
+    <p>Текст B: {{ form.text_b }}</p>
+    <p>Описание: {{ form.description }}</p>
+    <input type="submit" value="Save">
+</form>
+    <script type="text/javascript">
+
+        function sumTotal()
+        {
+            var weight_user = parseInt(document.getElementById("id_weight_user").value);
+            var age_user = parseInt(document.getElementById("id_age_user").value);
+            document.getElementById("id_total_user").value = weight_user + age_user;
+
+        }
+
+    </script>
+</body>
+</html>
